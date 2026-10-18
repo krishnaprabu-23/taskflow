@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow - Task Manager</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>TaskFlow</h1>
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+    </header>
+
+    <form id="task-form" class="task-form">
+      <input id="task-input" type="text" placeholder="What needs to be done?" maxlength="100" required>
+      <select id="priority-select" aria-label="Priority">
+        <option value="low">Low</option>
+        <option value="medium" selected>Medium</option>
+        <option value="high">High</option>
+      </select>
+      <input id="due-date" type="date" aria-label="Due date">
+      <button type="submit" class="btn-primary">Add</button>
+    </form>
+
+    <div class="toolbar">
+      <input id="search-input" type="search" placeholder="Search tasks...">
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="active">Active</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+      </div>
+    </div>
+
+    <ul id="task-list" class="task-list"></ul>
+    <p id="empty-message" class="empty" hidden>No tasks found.</p>
+
+    <footer class="app-footer">
+      <span id="task-count">0 tasks left</span>
+      <button id="clear-completed" class="link-btn">Clear completed</button>
+    </footer>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
